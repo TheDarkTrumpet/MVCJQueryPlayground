@@ -21,10 +21,13 @@
             function runEffect() {
                 $("#effect").toggle("blind", {percent: 0}, 500);
             }
+
             $("#button").click(function() {
                 runEffect();
                 return false;
-            })
+            });
+
+            $("#effect").hide();
         });
     </script>
 }
