@@ -3,4 +3,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section scripts
+{
+    <style>
+        .toggler {
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        $(function() {
+            //Accordion Test
+            $("#accordion").accordion();
+
+            //Hide/Blind Test
+
+            function runEffect() {
+                $("#effect").toggle("blind", {percent: 0}, 500);
+            }
+            $("#button").click(function() {
+                runEffect();
+                return false;
+            })
+        });
+    </script>
+}
 <h2>Accordion Test</h2>
+
+<div id="accordion">
+    <h3>Static Text 1</h3>
+    <div>
+        <h4>Section subtitle</h4>
+        <p>This is a mini paragraph, mini paragraph</p>
+        <h4>Section subtitle</h4>
+        <p>This is another paragraph.</p>
+    </div>
+    <h3>Static Text 2</h3>
+    <div>
+        <h4>Section subtitle</h4>
+        <p>This is a mini paragraph, mini paragraph</p>
+        <h4>Section subtitle</h4>
+        <p>This is another paragraph.</p>
+    </div>
+</div>
+
+<h2>Hide/Blind Test</h2>
+
+<h3><a href="#" id="button" class="ui-state-default ui-corner-all">View Section</a></h3>
+<div class="toggler">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+      <h2>Policy Information #1</h2>
+      <p>Some <u>information</u></p>
+      <p>Some other information</p>
+      <h3>Another section here, same policy</h3>
+      <p>Text about this particular section, within the same policy</p>
+  </div>
+</div>
